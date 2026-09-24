@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { navigation } from '../content'
+import ArrowIcon from './ArrowIcon'
 
 export default function Navbar() {
   const [active, setActive] = useState<string>('home')
@@ -39,7 +40,7 @@ export default function Navbar() {
           onClick={() => setActive(id)}
         >
           {active === id && <motion.span className="dock-active" layoutId="dock-active" transition={{ type: 'spring', stiffness: 400, damping: 34 }} />}
-          <span className="dock-symbol" aria-hidden="true">{symbol}</span>
+          <span className="dock-symbol" aria-hidden="true">{id === 'contact' ? <ArrowIcon /> : symbol}</span>
           <span className="dock-tooltip">{label}</span>
         </a>
       ))}

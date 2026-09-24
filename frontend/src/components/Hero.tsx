@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import ArrowIcon from './ArrowIcon'
 
 export default function Hero() {
   const reduceMotion = useReducedMotion()
@@ -28,12 +29,12 @@ export default function Hero() {
           Веб-разработка, блокчейн и искусственный интеллект.
         </motion.p>
         <motion.a className="ellipse-button" href="#work" {...rise(0.55)} whileHover={{ scale: 1.035, backgroundColor: 'rgba(255,255,255,.13)' }} whileTap={{ scale: 0.97 }}>
-          Смотреть проекты <span aria-hidden="true">↗</span>
+          Смотреть проекты <ArrowIcon className="button-arrow" />
         </motion.a>
       </div>
       <div className="hero-bottom">
         <span>01 / 04 <span className="bottom-muted">— РЕЗЮМЕ</span></span>
-        <a href="#about">ЛИСТАЙТЕ ВНИЗ <span aria-hidden="true">↓</span></a>
+        <a href="#about">ЛИСТАЙТЕ ВНИЗ <ArrowIcon className="scroll-arrow" direction="down" /></a>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import SceneSection from './SceneSection'
 import { projects } from '../content'
 import SectionHeading from './SectionHeading'
+import ArrowIcon from './ArrowIcon'
 
 export default function Projects() {
   const reduceMotion = useReducedMotion()
@@ -27,7 +28,7 @@ export default function Projects() {
                 <p className="project-description">{project.description}</p>
                 <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </div>
-              {'href' in project && <a className="project-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`${project.linkLabel}: ${project.title}`}>↗<span>{project.linkLabel}</span></a>}
+              {'href' in project && <a className="project-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`${project.linkLabel}: ${project.title}`}><ArrowIcon className="project-arrow" /><span>{project.linkLabel}</span></a>}
             </motion.article>
           ))}
         </div>

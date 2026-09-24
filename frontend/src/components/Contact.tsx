@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import SceneSection from './SceneSection'
 import SectionHeading from './SectionHeading'
+import ArrowIcon from './ArrowIcon'
 
 const contacts = [
   { label: 'smirnovk234@gmail.com', href: 'mailto:smirnovk234@gmail.com' },
@@ -31,13 +32,13 @@ export default function Contact() {
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
               >
-                {label} <span aria-hidden="true">↗</span>
+                {label} <ArrowIcon className="contact-arrow" />
               </motion.a>
             ))}
           </div>
         </div>
       </div>
-      <div className="footer-line section-shell"><span>A1 / PORTFOLIO</span><span>© 2026</span><a href="#home">НАВЕРХ ↑</a></div>
+      <div className="footer-line section-shell"><span>A1 / PORTFOLIO</span><span>© 2026</span><a href="#home">НАВЕРХ <ArrowIcon className="footer-arrow" direction="up" /></a></div>
     </SceneSection>
   )
 }

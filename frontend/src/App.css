@@ -8,3 +8,14 @@
 .scene-ripple{position:absolute;top:-230px;left:0;right:0;height:700px;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,rgba(185,234,245,.15) 0%,transparent 21%,rgba(161,218,230,.26) 21.4%,transparent 21.9%,transparent 38%,rgba(161,218,230,.18) 38.4%,transparent 38.9%,transparent 55%,rgba(161,218,230,.12) 55.4%,transparent 56%)}
 .projects-section .scene-ripple{background:radial-gradient(circle at 50% 50%,rgba(27,97,111,.09) 0%,transparent 21%,rgba(27,97,111,.23) 21.4%,transparent 21.9%,transparent 38%,rgba(27,97,111,.16) 38.4%,transparent 38.9%,transparent 55%,rgba(27,97,111,.1) 55.4%,transparent 56%)}
 @media(prefers-reduced-motion:reduce){.scene-section{transform:none!important}.scene-ripple{display:none}}
+
+/* SVG arrows keep a consistent outline across desktop and mobile fonts. */
+.dock-symbol svg{display:block;width:21px;height:21px}
+.contact-arrow{display:block;flex:none;width:19px;height:19px}
+.footer-line a{display:inline-flex;align-items:center;gap:6px}
+.footer-arrow{width:14px;height:14px}
+.button-arrow{width:18px;height:18px}
+.hero-bottom>a{display:inline-flex;align-items:center;gap:8px}
+.scroll-arrow{width:17px;height:17px}
+.project-arrow{width:25px;height:25px}
+@media(max-width:460px){.dock-symbol svg{width:19px;height:19px}}
