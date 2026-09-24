@@ -19,3 +19,31 @@
 .scroll-arrow{width:17px;height:17px}
 .project-arrow{width:25px;height:25px}
 @media(max-width:460px){.dock-symbol svg{width:19px;height:19px}}
+
+/* The active dock item is a small moving glass lens. */
+.dock-active{
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 26% 8%,rgba(238,253,255,.3),transparent 47%),
+    linear-gradient(145deg,rgba(210,245,252,.2),rgba(91,158,174,.1) 55%,rgba(4,20,27,.35));
+  border:1px solid rgba(231,252,255,.44);
+  backdrop-filter:blur(10px) saturate(165%);
+  -webkit-backdrop-filter:blur(10px) saturate(165%);
+  box-shadow:0 8px 18px rgba(0,0,0,.24),0 0 15px rgba(160,223,235,.12),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -5px 10px rgba(5,21,28,.18);
+}
+.dock-active::before{
+  content:'';position:absolute;inset:1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(125deg,rgba(255,255,255,.23),transparent 32%,transparent 68%,rgba(190,233,242,.12));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.dock-active::after{
+  content:'';position:absolute;top:-40%;left:-85%;width:45%;height:180%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:rotate(25deg);animation:dock-glass-glint 7s ease-in-out infinite;
+}
+.dock-item.is-active .dock-symbol{text-shadow:0 1px 8px rgba(220,252,255,.45)}
+@keyframes dock-glass-glint{0%,55%{left:-85%;opacity:0}61%{opacity:.8}78%{left:140%;opacity:.55}83%,100%{left:140%;opacity:0}}
+@media(prefers-reduced-motion:reduce){.dock-active::after{animation:none;display:none}}
+@media(prefers-reduced-transparency:reduce){.dock-active{background:#31505a;backdrop-filter:none;-webkit-backdrop-filter:none}.dock-active::after{display:none}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.dock-active{background:#31505a}}

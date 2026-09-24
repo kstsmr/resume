@@ -39,7 +39,7 @@ export default function Navbar() {
           title={label}
           onClick={() => setActive(id)}
         >
-          {active === id && <motion.span className="dock-active" layoutId="dock-active" transition={{ type: 'spring', stiffness: 400, damping: 34 }} />}
+          {active === id && <motion.span className="dock-active" layoutId="dock-active" transition={{ type: 'spring', stiffness: 340, damping: 29, mass: 0.8 }} />}
           <span className="dock-symbol" aria-hidden="true">{id === 'contact' ? <ArrowIcon /> : symbol}</span>
           <span className="dock-tooltip">{label}</span>
         </a>
